@@ -1,0 +1,41 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dove-gray: #707070;
+    --color-sandal: #A18A68;
+    --color-alto: #D8D8D8;
+    --color-gallery: #EFEFEF;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--color-black);
+
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
