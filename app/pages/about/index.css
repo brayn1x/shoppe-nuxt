@@ -1,0 +1,58 @@
+.about {
+    max-width: 670px;
+    margin: 0 auto;
+}
+
+.about h1 {
+    margin-bottom: 24px;
+
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.about h2 {
+    margin-top: 40px;
+    font-size: 26px;
+}
+
+.about h3 {
+    margin-bottom: 46px;
+
+    font-size: 20px;
+    text-align: center;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 169%;
+}
+
+.about ul li {
+    position: relative;
+
+    margin-left: 30px;
+
+    font-size: 16px;
+    line-height: 169%;
+}
+
+.about ul li::before {
+    position: absolute;
+    top: 6px;
+    left: -15px;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: var(--color-black);
+    content: '';
+}
+
+.about img {
+    width: 100%;
+
+    margin-top: 24px;
+    margin-bottom: 48px;
+}

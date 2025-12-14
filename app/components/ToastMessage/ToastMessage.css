@@ -1,0 +1,38 @@
+.toast-cover {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 100;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    background: var(--color-gallery);
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .toast-cover {
+        bottom: 0;
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 450px;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

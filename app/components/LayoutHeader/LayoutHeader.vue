@@ -16,6 +16,14 @@ const iconLinks = [
 const isOpened = ref(false)
 const search = ref('')
 
+watch(isOpened, () => {
+	if (isOpened.value === true) {
+		document.body.classList.add('modal-open')
+	} else {
+		document.body.classList.remove('modal-open')
+	}
+})
+
 const toggleIsOpened = () => {
 	isOpened.value = !isOpened.value
 }

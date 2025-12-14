@@ -24,6 +24,7 @@
 
 .main {
 	flex: 1 1 auto;
+	padding: 16px 0;
 }
 
 @media (min-width: 1240px) {

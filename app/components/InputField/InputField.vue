@@ -8,6 +8,10 @@ const { type = 'ghost', iconPosition = 'right', placeholder = '' } = defineProps
 const model = defineModel<string>({
 	required: true
 })
+
+const emit = defineEmits<{
+	(e: 'ok'): void
+}>()
 </script>
 
 <template>
@@ -18,9 +22,9 @@ const model = defineModel<string>({
 			class="input__field"
 			type="text"
 		>
-		<div :class="['input__icon', {[iconPosition]: iconPosition}]">
+		<button :class="['input__icon', {[iconPosition]: iconPosition}]" @click="emit('ok')">
 			<slot />
-		</div>
+		</button>
 	</div>
 </template>
 

@@ -5,6 +5,13 @@
     gap: 8px;
 }
 
+.input__icon {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 .input.ghost {
     padding: 5px 10px;
 
