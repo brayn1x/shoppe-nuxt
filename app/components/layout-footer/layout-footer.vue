@@ -1,18 +1,7 @@
 <script lang="ts" setup>
 const email = ref('')
-const isToastVisible = ref(false)
-let timer: ReturnType<typeof setTimeout> | null = null
 
-const showToast = () => {
-	isToastVisible.value = true
-
-	if (timer) clearTimeout(timer)
-
-	timer = setTimeout(() => {
-		isToastVisible.value = false
-		timer = null
-	}, 3000)
-}
+const toastStore = useToastStore()
 
 const textLinks = [
 	{ id: 1, href: '#', label: 'Контакты' },
@@ -35,7 +24,7 @@ const socialsLinks = [
 			class="footer-form"
 			placeholder="Ваш email для акций и предложений"
 			variant="transparent"
-			@ok="showToast"
+      @ok="toastStore.showToast('success', 'Ваш email подписан на новости и уведомления')"
 		>
 			<Icon name="icons:arrow-right" size="8" />
 		</InputField>
@@ -52,10 +41,6 @@ const socialsLinks = [
 			</li>
 		</ul>
 		<div class="footer__copyright">© {{ new Date().getFullYear() }} Shoppe</div>
-		<ToastMessage :is-visible="isToastVisible">
-			<Icon name="icons:check" size="20" />
-			Ваш email подписан на новости и уведомления
-		</ToastMessage>
 	</footer>
 </template>
 

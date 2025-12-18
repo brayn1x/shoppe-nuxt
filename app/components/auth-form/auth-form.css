@@ -22,6 +22,10 @@
     cursor: pointer;
 }
 
+.auth__additional-info input[type='checkbox'] {
+  accent-color: var(--color-black);
+}
+
 .auth__actions {
     display: flex;
     flex-direction: column;

@@ -1,11 +1,13 @@
 <script lang="ts" setup>
+import RegisterForm from '~/components/auth-form/register-form.vue'
+
 definePageMeta({
-	layout: 'auth'
+  layout: 'auth'
 })
 </script>
 
 <template>
-	<AuthForm variant="register" />
+  <RegisterForm />
 </template>
 
 <style>
