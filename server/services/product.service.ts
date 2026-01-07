@@ -14,10 +14,9 @@ export const getProducts = async (params: {
   page?: string
   limit?: string
   discount?: boolean
+  price?: [number, number]
 }) => {
-  const { search, category, page, limit, discount } = params
-
-  console.log(discount)
+  const { search, category, page, limit, discount, price } = params
 
   const where: Prisma.ProductWhereInput = {}
 
@@ -56,6 +55,13 @@ export const getProducts = async (params: {
     }
   }
 
+  if (price && (price[0] > 0 || price[1] > 0)) {
+    where.price = {
+      gte: price[0],
+      lte: price[1]
+    }
+  }
+
   const total = await prisma.product.count({ where })
   const pageNum = Number(page) || 1
   const limitNum = Number(limit) || 6
@@ -69,8 +75,15 @@ export const getProducts = async (params: {
     }
   })
 
+  const priceRange = await prisma.product.aggregate({
+    _min: { price: true },
+    _max: { price: true }
+  })
+
   return {
     products,
-    total
+    total,
+    minPrice: priceRange._min.price ?? 0,
+    maxPrice: priceRange._max.price ?? 0
   }
 }

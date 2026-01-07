@@ -1,14 +1,10 @@
 <script lang="ts" setup>
-const { modelValue } = defineProps<{
-  modelValue: boolean
-}>()
-
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void
-}>()
+const model = defineModel<boolean>({
+  required: true
+})
 
 const toggleValue = () => {
-  emit('update:modelValue', !modelValue)
+  model.value = !model.value
 }
 </script>
 

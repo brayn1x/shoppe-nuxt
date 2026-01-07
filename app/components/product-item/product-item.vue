@@ -15,43 +15,6 @@ const { name, price, images, discount } = defineProps<Product>()
   </div>
 </template>
 
-<style scoped>
-.product__card {
-  position: relative;
-}
+<style scoped src="./product-item.css">
 
-.product__discount {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-
-  padding: 8px;
-
-  color: var(--color-white);
-  font-size: 12px;
-
-  background: var(--color-sandal);
-  border-radius: 4px;
-}
-
-.product__image {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;
-  margin-bottom: 24px;
-
-  border-radius: 8px;
-}
-
-.product__title {
-  margin-bottom: 16px;
-
-  text-align: left;
-}
-
-.product__price {
-  color: var(--color-sandal);
-  font-weight: 500;
-  font-size: 20px;
-}
 </style>

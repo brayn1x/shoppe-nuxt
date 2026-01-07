@@ -1,0 +1,40 @@
+.price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.range-wrapper {
+  position: relative;
+
+  height: 20px;
+}
+
+.range-wrapper input[type="range"] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  height: 2px;
+  width: 100%;
+
+  background: var(--color-alto);
+  pointer-events: none;
+}
+
+.range-wrapper input[type="range"]::-webkit-slider-thumb,
+.range-wrapper input[type="range"]::-moz-range-thumb {
+  width: 3px;
+  height: 12px;
+
+  background: var(--color-black);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.price-info {
+  font-size: 14px;
+  color: var(--color-dove-gray);
+}

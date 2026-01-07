@@ -7,9 +7,11 @@ export default defineEventHandler((event) => {
   if (!token) throw badRequest(400, 'Вы не авторизованы')
 
   return getProducts({
+    search: queryParams.search?.toString(),
     category: queryParams.category?.toString(),
     page: queryParams.page?.toString(),
     limit: queryParams.limit?.toString(),
-    discount: queryParams.discount === 'true'
+    discount: queryParams.discount === 'true',
+    price: [Number(queryParams.minPrice), Number(queryParams.maxPrice)]
   })
 })
